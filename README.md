@@ -53,6 +53,23 @@ mfe_demo/project-1/container$ npm run start
 ```
 
 --------------
+## Running the Project-2 application
+
+
+* Run the `marketing` application. This can be accessed from  http://localhost:8081/
+```
+mfe_demo/project-2/marketing$ npm run start
+
+> marketing@1.0.0 start
+> webpack serve --config config/webpack.dev.js
+
+ℹ ｢wds｣: Project is running at http://localhost:8081/
+...
+
+```
+
+
+--------------
 ## References:
 
 * Udemy course - [Microfrontends with React: A Complete Developer's Guide](https://delldigital.udemy.com/course/microfrontend-course)
