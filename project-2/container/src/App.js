@@ -1,14 +1,17 @@
 import React from 'react';
-import { Switch, Route, BrowserRouter } from 'react-router-dom';
-import { StylesProvider } from '@material-ui/core/styles';
+import { BrowserRouter } from 'react-router-dom';
 
+import Header from './components/Header';
 import MarketingMfeAppWrapper from './components/MarketingMfeAppWrapper';
 
 export default () => {
 
-    return <div>
-        <h3> Container App </h3>
-        <hr />
-        <MarketingMfeAppWrapper />
-    </div>
+    return (
+        <BrowserRouter>
+            <div>
+                <Header />
+                <MarketingMfeAppWrapper />
+            </div>
+        </BrowserRouter>
+    )
 };
