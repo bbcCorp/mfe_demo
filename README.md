@@ -7,6 +7,22 @@ If you are new to micro-frontends, I would highly recommend this course.
 --------------
 ## Requirements
 
+### Core principles
+
+1. Each team can choose any frontend framework that works for them as long as they support Webpack and module federation concepts.
+2. Each team/application needs to standardize the names for the MFE application. 
+3. There should be zero couplings between child components
+   * No importing functions/objects/classes
+   * No shared state
+   * Shared libraries through MF is OK
+4. There should be near zero coupling between container and child applications
+   * The container should not assume that the child application is using a particular framework
+   * Any necessary callback is done with callback or simple events
+5. CSS from one project should never affect another
+6. Version control should not have any impact on the overall project. It is advised to keep separate repos for each project
+   * The container should be able to decide to always use a specific version of a micro-frontend or the latest version
+7. The container app should enforce authentication and top-level authorization.
+
 ### Navigation
 1. Both the container + individual subapps need routing features. 
     * Users can navigate around to different subapps using routing logic built into the Container. 
@@ -16,7 +32,7 @@ If you are new to micro-frontends, I would highly recommend this course.
 3. We might need to show two or more microfrontend at the same time.
 4. We want to use off-the-shelf routing solutions
 5. We need navigation features for the subapp in both hosted mode and in isolation.
-6. If different apps nee to communicate information about routing, it should be done in as generic a fashion as possible.
+6. If different apps need to communicate information about routing, it should be done in as generic a fashion as possible.
     * Each app might be using a completely different navigation framework.
     * We might swap out or upgrade navigation libraries all the time - shouldn't require a rewrite of the rest of the app.
   
