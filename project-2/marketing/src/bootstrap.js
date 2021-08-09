@@ -1,15 +1,41 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { createMemoryHistory, createBrowserHistory } from 'history';
+
 import App from './App';
 
 
-const mount = (el)=> {
+const mount = (el, { onNavigate, defaultHistory })=> {
 
 	console.log("Mounting Marketing Mfe");
 
+	// local dev mode will use defaultHistory (browser history) where as within container we will use memory history
+	const history = defaultHistory || createMemoryHistory();
+	
+	// This registers the container's callback function whenever history changes.
+	if(onNavigate){
+		history.listen(onNavigate);
+	}
+	
+
 	ReactDOM.render(
-		<App />, el
+		<App history={history} />, el
 	);
+
+	return {
+
+		// Callback function on the Child app that Container app will use to communicate navigation
+		onParentNavigate(location) {
+			console.log('Container app just navigated');
+
+			const { pathname } = history.location;
+			if(location && location.pathname && pathname !== location.pathname){
+				console.log(location.pathname);
+				history.push(location.pathname);
+			}
+		}
+
+	};
 } 
 
 
@@ -18,7 +44,7 @@ if (process.env.NODE_ENV === 'development') {
 	const devRoot = document.querySelector('#__localapp-marketing-container');
 
 	if(devRoot){
-		mount(devRoot);
+		mount(devRoot, { defaultHistory: createBrowserHistory() });
 	}
 	
 }
