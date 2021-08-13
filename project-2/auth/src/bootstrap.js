@@ -7,7 +7,7 @@ import App from './App';
 
 const mount = (el, { onNavigate, defaultHistory, initialPath })=> {
 
-	console.log("Mounting Marketing Mfe");
+	console.log("Mounting Auth Mfe");
 
 	// local dev mode will use defaultHistory (browser history) where as within container we will use memory history
 	const history = defaultHistory || createMemoryHistory({
@@ -40,10 +40,11 @@ const mount = (el, { onNavigate, defaultHistory, initialPath })=> {
 	};
 } 
 
+const devRoot = document.querySelector('#__localapp-auth-container');
 
 // Context 1: Local development mode
-if (process.env.NODE_ENV === 'development') {
-	const devRoot = document.querySelector('#__localapp-marketing-container');
+if (process.env.NODE_ENV === 'development' || devRoot) {
+	
 
 	if(devRoot){
 		mount(devRoot, { defaultHistory: createBrowserHistory() });
