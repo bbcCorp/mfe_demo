@@ -5,12 +5,14 @@ import { createMemoryHistory, createBrowserHistory } from 'history';
 import App from './App';
 
 
-const mount = (el, { onNavigate, defaultHistory })=> {
+const mount = (el, { onNavigate, defaultHistory, initialPath })=> {
 
 	console.log("Mounting Marketing Mfe");
 
 	// local dev mode will use defaultHistory (browser history) where as within container we will use memory history
-	const history = defaultHistory || createMemoryHistory();
+	const history = defaultHistory || createMemoryHistory({
+		initialEntries: [initialPath]
+	});
 	
 	// This registers the container's callback function whenever history changes.
 	if(onNavigate){

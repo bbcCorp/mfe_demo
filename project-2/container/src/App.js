@@ -9,12 +9,11 @@ import AuthMfeAppWrapper from './components/AuthMfeAppWrapper';
 
 const generateClassName = createGenerateClassName({
     productionPrefix: 'cnt'
-});
+}); 
 
 export default () => {
 
     return (
-
         <BrowserRouter>
             <StylesProvider generateClassName={generateClassName}>
                 <div>
@@ -26,7 +25,5 @@ export default () => {
                 </div>
             </StylesProvider>
         </BrowserRouter>
-
-
     )
 };

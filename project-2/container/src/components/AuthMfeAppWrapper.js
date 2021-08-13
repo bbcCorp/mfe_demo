@@ -10,6 +10,8 @@ export default () => {
     useEffect(()=>{
         const { onParentNavigate } = mount(ref.current, {
 
+            initialPath: history.location.pathname,
+
             // Callback function on the Container app that child apps will use to communicate navigation
             // Child app needs to implement onNavigate function
             onNavigate: (location) => {
