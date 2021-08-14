@@ -4,7 +4,7 @@ This application demonstrates how to build MFE applications. This is based on St
 
 If you are new to micro-frontends, I would highly recommend this course. 
 
---------------
+-------------------------------------------------------------------------------
 ## Requirements
 
 ### Core principles
@@ -23,6 +23,7 @@ If you are new to micro-frontends, I would highly recommend this course.
    * The container should be able to decide to always use a specific version of a micro-frontend or the latest version
 7. The container app should enforce authentication and top-level authorization.
 
+-------------------------------------------------------------------------------
 ### Navigation
 1. Both the container + individual subapps need routing features. 
     * Users can navigate around to different subapps using routing logic built into the Container. 
@@ -50,21 +51,33 @@ Now, child app needs to communicate navigation history present in Memory history
 
 Container needs to pass `onNavigate` callback function to the child app when it calls the `mount` function.
 
+-------------------------------------------------------------------------------
 #### Navigation History
 In order to update update navigation history properly, we will do the following:
 * Container will be the only app updating Browser History
 * Child apps will update Memory History
 
+-------------------------------------------------------------------------------
+## Authentication
 
---------------
+When it comes to authentication, there are two approaches
+1. Each app is aware of authentication
+2. Centralize authentication in Container. Container tells each sub app when user logs in and then notifies the child apps when user logs in. 
+
+We will go with option#2.
+
+-------------------------------------------------------------------------------
 
 ## Setup and Execution
 To understand how to setup and execute this project, follow the instructions mentioned [here](./SETUP.md)
 
---------------
+-------------------------------------------------------------------------------
 ## References:
 
 * Udemy course - [Microfrontends with React: A Complete Developer's Guide](https://www.udemy.com/course/microfrontend-course/)
 
 
 * [React Router documentation](https://reactrouter.com/web/guides/quick-start)
+
+
+-------------------------------------------------------------------------------
