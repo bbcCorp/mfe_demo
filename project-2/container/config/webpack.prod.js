@@ -19,7 +19,8 @@ const prodConfig= {
 			remotes: {
                 // These needs to be set to some production domain
 				marketingMfe : `marketing@${domain}/marketing/latest/remoteEntry.js`,
-				authMfe : `auth@http://${domain}/auth/latest/remoteEntry.js`
+				authMfe : `auth@http://${domain}/auth/latest/remoteEntry.js`,
+				dashboardMfe : `dashboard@http://${domain}/dashboard/remoteEntry.js`
 			},
 			shared: packageJson.dependencies,
 		}),	
