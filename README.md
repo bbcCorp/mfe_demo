@@ -5,6 +5,15 @@ This application demonstrates how to build MFE applications. This is based on St
 If you are new to micro-frontends, I would highly recommend this course. 
 
 -------------------------------------------------------------------------------
+
+## Really Big Takeaways
+
+* Your requirement drives your architecture
+* MFE's might cause production issue that you do not see in development
+* Do not forget to scope your CSS
+* Don't make assumptions about one UI framework like React
+
+-------------------------------------------------------------------------------
 ## Requirements
 
 ### Core principles

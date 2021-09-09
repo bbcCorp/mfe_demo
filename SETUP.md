@@ -77,7 +77,7 @@ mfe_demo/project-2/marketing$ npm run start
 ```
 
 
-* Now, run the `auth` application. This can be accessed from  http://localhost:8083/
+* Run the `auth` application. This can be accessed from  http://localhost:8083/
 
 ```
 mfe_demo/project-2/auth$ npm run start
@@ -86,6 +86,19 @@ mfe_demo/project-2/auth$ npm run start
 > webpack serve --config config/webpack.dev.js
 
 ℹ ｢wds｣: Project is running at http://localhost:8083/
+...
+```
+
+
+* Run the `dashboard` application. This can be accessed from  http://localhost:8084/
+
+```
+mfe_demo/project-2/dashboard$ npm run start
+
+> container@1.0.0 start
+> webpack serve --config config/webpack.dev.js
+
+ℹ ｢wds｣: Project is running at http://localhost:8084/
 ...
 ```
 
