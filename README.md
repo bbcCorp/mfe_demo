@@ -2,7 +2,7 @@
 
 This application demonstrates how to build MFE applications. This is based on Stephen Grider's the excellent Udemy course - [Microfrontends with React: A Complete Developer's Guide](https://www.udemy.com/course/microfrontend-course/). 
 
-If you are new to micro-frontends, I would highly recommend this course. 
+If you are new to micro-frontends, I would highly recommend this course. It's an absolute gem of a course.
 
 -------------------------------------------------------------------------------
 
@@ -54,7 +54,8 @@ route       |   app
 ------      |   --------
 /           |   marketing
 /pricing    |   marketing
-/ auth      |   auth
+/auth       |   auth
+/dashboard  |   dashboard
 
 Now, child app needs to communicate navigation history present in Memory history to the container so Browser History can be updated. The opposite might also be needed in some scenarios.
 
@@ -84,9 +85,7 @@ To understand how to setup and execute this project, follow the instructions men
 ## References:
 
 * Udemy course - [Microfrontends with React: A Complete Developer's Guide](https://www.udemy.com/course/microfrontend-course/)
-
-
+* Udemy course - [Modern React with Redux ](https://www.udemy.com/course/react-redux/)
 * [React Router documentation](https://reactrouter.com/web/guides/quick-start)
-
 
 -------------------------------------------------------------------------------
